@@ -33,13 +33,13 @@ public class Database {
                                     "John Johnson", 1200, 25, "Active"));
         
         // Initialize users
-        users.add(new User(nextUserId++, "Joseph", "Oliver", "123 N High St", "513-123-4567", "joseph@email.com"));
+        users.add(new User(nextUserId++, "Joseph", "M", "Oliver", "123 N High St", "513-123-4567", "joseph@email.com"));
         users.get(0).setWarehouseId(1);
-        users.add(new User(nextUserId++, "Allison", "Rudie", "123 N High St", "614-234-5678", "allison@email.com"));
+        users.add(new User(nextUserId++, "Allison", "M", "Rudie", "123 N High St", "614-234-5678", "allison@email.com"));
         users.get(1).setWarehouseId(2);
-        users.add(new User(nextUserId++, "Jia", "Hui Tang", "123 N High St", "614-345-6789", "jia@email.com"));
+        users.add(new User(nextUserId++, "Jia", "M","Hui Tang", "123 N High St", "614-345-6789", "jia@email.com"));
         users.get(2).setWarehouseId(2);
-        users.add(new User(nextUserId++, "Wil", "Borchers", "123 N High St", "614-456-7890", "wil@email.com"));
+        users.add(new User(nextUserId++, "Wil", "M","Borchers", "123 N High St", "614-456-7890", "wil@email.com"));
         users.get(3).setWarehouseId(3);
         
         // Initialize equipment

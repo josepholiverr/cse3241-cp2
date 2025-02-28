@@ -43,6 +43,8 @@ public class RentalSystem {
         System.out.println("\n=== Create New Account ===");
         System.out.print("First Name: ");
         String firstName = scanner.nextLine();
+        System.out.print("Middle Initial: ");
+        String mInit = scanner.nextLine();
         System.out.print("Last Name: ");
         String lastName = scanner.nextLine();
         System.out.print("Address: ");
@@ -59,7 +61,7 @@ public class RentalSystem {
         int warehouseId = getUserChoice();
 
         // Create a new user and add to database
-        currentUser = new User(Database.getNextUserId(), firstName, lastName, address, phone, email);
+        currentUser = new User(Database.getNextUserId(), firstName, mInit, lastName, address, phone, email);
         currentUser.setWarehouseId(warehouseId);
         Database.addUser(currentUser);
         System.out.println("Account created successfully!");
@@ -377,7 +379,7 @@ public class RentalSystem {
                            user.getLastName().toLowerCase().contains(query))
             .forEach(user -> {
                 System.out.println("ID: " + user.getUserId() + ", Name: " + user.getFirstName() + " " + 
-                                  user.getLastName() + ", Email: " + user.getEmail());
+                                  user.getMInit() + " " + user.getLastName() + ", Email: " + user.getEmail());
             });
     }
     
@@ -437,6 +439,8 @@ public class RentalSystem {
         System.out.println("\n=== Add User ===");
         System.out.print("First Name: ");
         String firstName = scanner.nextLine();
+        System.out.print("Middle Initial: ");
+        String mInit = scanner.nextLine();
         System.out.print("Last Name: ");
         String lastName = scanner.nextLine();
         System.out.print("Address: ");
@@ -448,7 +452,7 @@ public class RentalSystem {
         System.out.print("Warehouse ID: ");
         int warehouseId = getUserChoice();
         
-        User user = new User(Database.getNextUserId(), firstName, lastName, address, phone, email);
+        User user = new User(Database.getNextUserId(), firstName, mInit, lastName, address, phone, email);
         user.setWarehouseId(warehouseId);
         user.setStatus("Active");
         
@@ -568,6 +572,11 @@ public class RentalSystem {
             System.out.print("New First Name (" + user.getFirstName() + "): ");
             String firstName = scanner.nextLine();
             if (!firstName.isEmpty()) user.setFirstName(firstName);
+
+            System.out.print("New Middle Initial (" + user.getMInit() + "): ");
+            String mInit = scanner.nextLine();
+            if (!mInit.isEmpty()) user.setmInit(mInit);
+
             
             System.out.print("New Last Name (" + user.getLastName() + "): ");
             String lastName = scanner.nextLine();
