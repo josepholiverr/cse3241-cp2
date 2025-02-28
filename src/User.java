@@ -1,7 +1,7 @@
 import static java.sql.Types.NULL;
 
 public class User {
-    private Integer userId;
+    private final Integer userId;
     private String firstName;
     private String mInit;
     private String lastName;
